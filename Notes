@@ -1,0 +1,7 @@
+REGEX
+  Find something at end of string
+    something$
+  Find at start of string
+    ^something
+UTF - 8
+  Uses one to four bits for each of 130,000+ characters in many world scripts
