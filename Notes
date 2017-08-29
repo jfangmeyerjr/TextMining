@@ -5,3 +5,11 @@ REGEX
     ^something
 UTF - 8
   Uses one to four bits for each of 130,000+ characters in many world scripts
+  
+Lemmatization vs. Tokenization
+What is the difference?
+  PorterStemmer(t) = stems on each token
+
+POS Tag
+  "Part of Speech" Tag
+  nltk.pos_tag(text)
