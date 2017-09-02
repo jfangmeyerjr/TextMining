@@ -45,8 +45,26 @@ Test Phase
 
 CountVectorizer >> CountVectorizer.fit(X_train)
   Makes term-document matrix
-  TFIDF >> CountVectorizer(min_df = <min appearances threshold>).fit(X_train)
+  TFIDF >> TfidfVectorizer(min_df = <min appearances threshold>).fit(X_train)
     measure of term importance
     In information retrieval, tf–idf, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.[1]
   N-Grams capture small phrases  >> CountVectorizer(ngram_range=(1,2,<etc..>).fit(X_train)
     ex: "not good" vs. "good"
+
+SEMANTICS
+Distributional Similarity
+  Words that often appear with a common third word are likely related
+  Pointwise Mutual Information
+    Like tfidf, reduces weight of very common words
+    PMI(w,c) = log[P(w,c)/P(w)P(c)]
+    
+Latend Distribution Modeling
+  1. Topics have distributions of words
+  2. Topics are mixed together by some mixing distribution
+  3. Words are drawn to generate a corpus of text
+  - Could maybe learn word distribution of different religions 
+    and guess the religion based on some scripture text?
+ Hypernym is a superset of hyponym, which is a subet
+  ex: dog is hyponym of puppy
+ Person/Organization/Location/Other 
+  Standard 4-class "named entity" classification
