@@ -43,8 +43,10 @@ Training Phase Questions
 Test Phase
   1. How to measure good performance?
 
-CountVectorizer
+CountVectorizer >> CountVectorizer.fit(X_train)
   Makes term-document matrix
-  TFIDF
+  TFIDF >> CountVectorizer(min_df = <min appearances threshold>).fit(X_train)
     measure of term importance
     In information retrieval, tf–idf, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.[1]
+  N-Grams capture small phrases  >> CountVectorizer(ngram_range=(1,2,<etc..>).fit(X_train)
+    ex: "not good" vs. "good"
