@@ -6,10 +6,45 @@ REGEX
 UTF - 8
   Uses one to four bits for each of 130,000+ characters in many world scripts
   
-Lemmatization vs. Tokenization
+Tokenization
+  Finds tokens- words or sentences- but some non-words like "n't" are used as tokens to identify negation.
+  nltk.word_tokenize
+  nltk.sent_tokeinze
+Lemmatization vs. Stemming
 What is the difference?
+  Lemmatization leaves stems that are valid words! Useful...
   PorterStemmer(t) = stems on each token
 
 POS Tag
   "Part of Speech" Tag
   nltk.pos_tag(text)
+  
+CFG Grammar in NLTk
+grammar1 = nltk.data.load('mygrammar.cfg')
+  create and save 'mygrammar.cfg' like this:
+    S -> NP VP
+    VP -> V NP
+    NP -> "James" | "Audrey"
+    V -> "loves"
+Use Machine-Learned treebank
+  from nltk.corpus import treebank
+
+CLASSIFICATION
+Training Phase Questions
+  1. What are the features and how to represent them?
+    - Normalization (make all lowercase)
+    - Stop words (ignore "the" "a" etc)
+    - Stem/Lemmatize (reduce to root essence, eliminating plurals, tenses)
+    - Parts of Speech (can give context clues to mispelled words, or meanings)
+    - Synonyms (can be compressed into one feature)
+    - Ngrams consider set of words as one meaning
+  2. What algorithm to use?
+  3. Which parameters tuned on algorithm?
+Test Phase
+  1. How to measure good performance?
+
+CountVectorizer
+  Makes term-document matrix
+  TFIDF
+    measure of term importance
+    In information retrieval, tf–idf, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.[1]
